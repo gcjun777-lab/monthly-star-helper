@@ -1,0 +1,52 @@
+page {
+  background: #f4f7fb;
+  color: #1f2a44;
+  font-size: 28rpx;
+}
+
+.container {
+  padding: 24rpx;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 24rpx;
+  box-shadow: 0 8rpx 20rpx rgba(25, 39, 70, 0.06);
+  margin-bottom: 20rpx;
+}
+
+.card-title {
+  font-size: 26rpx;
+  color: #667089;
+  margin-bottom: 12rpx;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4rpx 14rpx;
+  border-radius: 999rpx;
+  font-size: 22rpx;
+}
+
+.tag-high {
+  background: #ffe8e8;
+  color: #d43232;
+}
+
+.tag-medium {
+  background: #fff3dd;
+  color: #b77800;
+}
+
+.tag-low {
+  background: #e8f5ec;
+  color: #2e8b57;
+}
+
+.btn-primary {
+  background: #1f2a44;
+  color: #fff;
+  border-radius: 16rpx;
+  font-size: 28rpx;
+}

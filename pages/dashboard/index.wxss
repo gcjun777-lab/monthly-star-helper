@@ -1,0 +1,64 @@
+.metric-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 12rpx;
+}
+
+.metric-item {
+  flex: 1;
+  background: #f6f8fc;
+  border-radius: 14rpx;
+  padding: 16rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 8rpx;
+}
+
+.metric-label {
+  font-size: 24rpx;
+  color: #7a859c;
+}
+
+.metric-value {
+  font-size: 36rpx;
+  font-weight: 700;
+  color: #1f2a44;
+}
+
+.warn {
+  color: #d43232;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  color: #3c4762;
+}
+
+.top-item {
+  padding: 16rpx 0;
+  border-bottom: 1rpx solid #edf0f6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.service {
+  font-weight: 600;
+  margin-right: 12rpx;
+}
+
+.meta {
+  color: #7a859c;
+  font-size: 24rpx;
+}
+
+.cost {
+  font-weight: 600;
+  color: #1f2a44;
+}

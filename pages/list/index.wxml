@@ -1,0 +1,75 @@
+<view class="container">
+  <view class="card toolbar">
+    <picker mode="selector" range="{{statusFilters}}" value="{{filterIndex}}" bindchange="onFilterChange">
+      <view class="filter">筛选状态：{{statusFilters[filterIndex]}}</view>
+    </picker>
+    <button class="btn-primary add-btn" bindtap="onOpenCreate">+ 新增订阅</button>
+  </view>
+
+  <block wx:for="{{records}}" wx:key="id">
+    <view class="card">
+      <view class="row head">
+        <text class="service">{{item.service}}</text>
+        <view class="actions">
+          <text class="link" data-id="{{item.id}}" bindtap="onOpenEdit">编辑</text>
+          <text class="link danger" data-id="{{item.id}}" bindtap="onDelete">删除</text>
+        </view>
+      </view>
+
+      <view class="row meta">
+        <text>{{item.category}} · {{item.period}} · ¥{{item.price}}</text>
+        <text>{{item.renewalDate}}</text>
+      </view>
+
+      <view class="row meta">
+        <text>月均：¥{{item.monthlyCost}}</text>
+        <text>年成本：¥{{item.yearlyCost}}</text>
+      </view>
+
+      <view class="row tags">
+        <text class="tag {{item.status === '待取消' ? 'tag-high' : 'tag-low'}}">{{item.status}}</text>
+        <text class="tag {{item.isFrequent === 'Y' ? 'tag-low' : 'tag-medium'}}">{{item.isFrequent === 'Y' ? '常用' : '低频'}}</text>
+        <text class="tag tag-medium">重要性：{{item.importance}}</text>
+      </view>
+    </view>
+  </block>
+
+  <view wx:if="{{!records.length}}" class="empty">暂无数据</view>
+
+  <view wx:if="{{showForm}}" class="mask" bindtap="onCloseForm">
+    <view class="form-card" catchtap="noop">
+      <view class="form-title">{{isEdit ? '编辑订阅' : '新增订阅'}}</view>
+
+      <input class="input" placeholder="服务名称*" value="{{form.service}}" data-field="service" bindinput="onInput" />
+      <input class="input" placeholder="类别*" value="{{form.category}}" data-field="category" bindinput="onInput" />
+      <input class="input" type="digit" placeholder="价格(元)*" value="{{form.price}}" data-field="price" bindinput="onInput" />
+
+      <picker mode="selector" range="{{periodOptions}}" value="{{periodIndex}}" bindchange="onPeriodChange">
+        <view class="input picker">计费周期：{{form.period}}</view>
+      </picker>
+
+      <picker mode="date" value="{{form.renewalDate}}" bindchange="onDateChange">
+        <view class="input picker">下次续费日期：{{form.renewalDate}}</view>
+      </picker>
+
+      <picker mode="selector" range="{{frequentOptions}}" value="{{frequentIndex}}" bindchange="onFrequentChange">
+        <view class="input picker">是否常用：{{form.isFrequent}}</view>
+      </picker>
+
+      <picker mode="selector" range="{{importanceOptions}}" value="{{importanceIndex}}" bindchange="onImportanceChange">
+        <view class="input picker">重要性：{{form.importance}}</view>
+      </picker>
+
+      <picker mode="selector" range="{{statusOptions}}" value="{{statusIndex}}" bindchange="onStatusChange">
+        <view class="input picker">状态：{{form.status}}</view>
+      </picker>
+
+      <input class="input" placeholder="备注" value="{{form.note}}" data-field="note" bindinput="onInput" />
+
+      <view class="btn-row">
+        <button class="btn ghost" bindtap="onCloseForm">取消</button>
+        <button class="btn-primary" bindtap="onSubmitForm">保存</button>
+      </view>
+    </view>
+  </view>
+</view>

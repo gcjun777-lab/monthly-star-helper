@@ -1,0 +1,116 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20rpx;
+}
+
+.filter {
+  color: #4c5876;
+}
+
+.add-btn {
+  margin: 0;
+  padding: 0 20rpx;
+  line-height: 64rpx;
+  height: 64rpx;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.head {
+  margin-bottom: 14rpx;
+}
+
+.service {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  gap: 24rpx;
+}
+
+.link {
+  color: #2b5ec9;
+  font-size: 24rpx;
+}
+
+.danger {
+  color: #d43232;
+}
+
+.meta {
+  color: #6f7b95;
+  font-size: 24rpx;
+}
+
+.tags {
+  margin-top: 8rpx;
+  gap: 12rpx;
+  justify-content: flex-start;
+}
+
+.empty {
+  text-align: center;
+  color: #7a859c;
+  margin-top: 120rpx;
+}
+
+.mask {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 22, 45, 0.45);
+  display: flex;
+  align-items: flex-end;
+}
+
+.form-card {
+  width: 100%;
+  background: #fff;
+  border-radius: 24rpx 24rpx 0 0;
+  padding: 24rpx;
+  max-height: 88vh;
+  overflow: auto;
+}
+
+.form-title {
+  font-size: 32rpx;
+  font-weight: 700;
+  margin-bottom: 16rpx;
+}
+
+.input {
+  background: #f6f8fc;
+  border-radius: 12rpx;
+  padding: 18rpx;
+  margin-bottom: 12rpx;
+}
+
+.picker {
+  color: #31405e;
+}
+
+.btn-row {
+  display: flex;
+  gap: 16rpx;
+  margin-top: 12rpx;
+}
+
+.btn {
+  flex: 1;
+  border-radius: 16rpx;
+  line-height: 72rpx;
+  height: 72rpx;
+}
+
+.ghost {
+  background: #eef2f9;
+  color: #2e3b58;
+}

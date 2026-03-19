@@ -1,0 +1,41 @@
+<view class="container">
+  <view class="card">
+    <view class="card-title">核心指标</view>
+    <view class="metric-grid">
+      <view class="metric-item">
+        <text class="metric-label">总月支出</text>
+        <text class="metric-value">¥{{stats.totalMonthly}}</text>
+      </view>
+      <view class="metric-item">
+        <text class="metric-label">总年支出</text>
+        <text class="metric-value">¥{{stats.totalYearly}}</text>
+      </view>
+      <view class="metric-item">
+        <text class="metric-label">待取消可省/年</text>
+        <text class="metric-value warn">¥{{stats.cancelSavingYearly}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="card-title">状态概览</view>
+    <view class="status-row">
+      <text>活跃订阅：{{stats.activeCount}}</text>
+      <text>待取消：{{stats.pendingCancelCount}}</text>
+      <text>低使用率：{{stats.lowUsageCount}}</text>
+    </view>
+  </view>
+
+  <view class="card">
+    <view class="card-title">年成本 TOP 3</view>
+    <block wx:for="{{stats.topCostList}}" wx:key="id">
+      <view class="top-item">
+        <view>
+          <text class="service">{{item.service}}</text>
+          <text class="meta">{{item.category}} · {{item.period}}</text>
+        </view>
+        <text class="cost">¥{{item.yearlyCost}}/年</text>
+      </view>
+    </block>
+  </view>
+</view>

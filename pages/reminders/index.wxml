@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="card">
+    <picker mode="selector" range="{{filters}}" value="{{filterIndex}}" bindchange="onFilterChange">
+      <view class="filter">筛选：{{filters[filterIndex]}}</view>
+    </picker>
+  </view>
+
+  <block wx:for="{{records}}" wx:key="id">
+    <view class="card">
+      <view class="head">
+        <text class="service">{{item.service}}</text>
+        <text class="tag {{item.reminderLevel === '已过期' || item.reminderLevel === '7天内续费' ? 'tag-high' : item.reminderLevel === '30天内续费' ? 'tag-medium' : 'tag-low'}}">{{item.reminderLevel}}</text>
+      </view>
+      <view class="meta-row">
+        <text>续费日期：{{item.renewalDate || '未填写'}}</text>
+        <text>剩余：{{item.daysLeft === null ? '--' : item.daysLeft + '天'}}</text>
+      </view>
+      <view class="meta-row">
+        <text>{{item.category}} · ¥{{item.yearlyCost}}/年</text>
+        <text>重要性：{{item.importance}}</text>
+      </view>
+    </view>
+  </block>
+
+  <view wx:if="{{!records.length}}" class="empty">当前筛选下暂无提醒</view>
+</view>

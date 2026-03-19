@@ -1,0 +1,28 @@
+.filter {
+  color: #4c5876;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12rpx;
+}
+
+.service {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  color: #6f7b95;
+  margin-bottom: 8rpx;
+}
+
+.empty {
+  text-align: center;
+  color: #7a859c;
+  margin-top: 120rpx;
+}

@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/dashboard/index",
+    "pages/list/index",
+    "pages/reminders/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "订阅管理助手",
+    "navigationBarBackgroundColor": "#1f2a44",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#f4f7fb",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#7d8699",
+    "selectedColor": "#1f2a44",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/dashboard/index",
+        "text": "总览",
+        "iconPath": "assets/home.png",
+        "selectedIconPath": "assets/home-active.png"
+      },
+      {
+        "pagePath": "pages/list/index",
+        "text": "清单",
+        "iconPath": "assets/list.png",
+        "selectedIconPath": "assets/list-active.png"
+      },
+      {
+        "pagePath": "pages/reminders/index",
+        "text": "提醒",
+        "iconPath": "assets/bell.png",
+        "selectedIconPath": "assets/bell-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
