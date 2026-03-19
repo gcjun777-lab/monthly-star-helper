@@ -80,3 +80,7 @@ python3 -m PyInstaller --noconfirm --windowed --name 订阅管理助手 main.py
 - 计算规则与 Excel 保持一致：
   - 周期：`月 / 季 / 年 / 2年`
   - 续费提醒：`已过期 / 7天内续费 / 30天内续费 / 正常`
+
+
+## PR 测试
+- 创建测试分支并验证 GitHub PR 流程。
