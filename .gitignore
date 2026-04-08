@@ -1,9 +1,12 @@
-﻿*.pyc
+﻿node_modules/
+release/
+build/backend/
+build/pyinstaller/
+*.pyc
 __pycache__/
 .venv/
 venv/
 .env
-
 build/
 dist/
 *.spec

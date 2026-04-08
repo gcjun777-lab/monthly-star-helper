@@ -1,0 +1,67 @@
+{
+  "name": "monthly-star-helper",
+  "version": "1.0.0",
+  "description": "Electron desktop app for generating monthly star posters.",
+  "main": "electron/main.js",
+  "author": "gcjun777-lab",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron .",
+    "build:backend": "python scripts/build_backend.py",
+    "dist": "npm run build:backend && electron-builder --win nsis",
+    "pack": "npm run build:backend && electron-builder --dir"
+  },
+  "build": {
+    "appId": "com.gcjun.monthlystarhelper",
+    "productName": "月度之星制作助手",
+    "compression": "store",
+    "electronLanguages": [
+      "zh-CN",
+      "en-US"
+    ],
+    "directories": {
+      "output": "release",
+      "buildResources": "electron/assets"
+    },
+    "files": [
+      "electron/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "build/backend/poster-backend.exe",
+        "to": "backend/poster-backend.exe"
+      },
+      {
+        "from": "月度之星个人海报-素材模板4.png",
+        "to": "assets/月度之星个人海报-素材模板4.png"
+      },
+      {
+        "from": "使用说明.txt",
+        "to": "assets/使用说明.txt"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "artifactName": "monthly-star-helper-Setup-${version}.${ext}",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "shortcutName": "月度之星制作助手",
+      "uninstallDisplayName": "月度之星制作助手"
+    }
+  },
+  "devDependencies": {
+    "electron": "^37.2.0",
+    "electron-builder": "^26.0.12"
+  }
+}

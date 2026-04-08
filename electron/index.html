@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>月度之星制作助手</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <aside class="sidebar panel">
+        <div>
+          <div class="brand-mark">
+            <div class="brand-icon">M</div>
+            <div>
+              <h1>月度之星</h1>
+              <p>Poster Studio</p>
+            </div>
+          </div>
+
+          <nav class="nav-stack">
+            <button class="nav-item active">总览面板</button>
+            <button class="nav-item">素材仓库</button>
+            <button class="nav-item">生成中心</button>
+            <button class="nav-item">输出归档</button>
+            <button class="nav-item">品牌模板</button>
+          </nav>
+
+          <div class="sidebar-section">
+            <p class="eyebrow">运行环境</p>
+            <div class="mini-card">
+              <span>默认模板</span>
+              <strong id="template-status">检测中</strong>
+            </div>
+            <div class="mini-card">
+              <span>后端模式</span>
+              <strong id="backend-mode">检测中</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-row">
+            <div class="avatar">GC</div>
+            <div>
+              <strong>月度之星制作助手</strong>
+              <p>高颜值桌面工作台</p>
+            </div>
+          </div>
+          <button id="open-readme-btn" class="ghost-btn full">打开使用说明</button>
+        </div>
+      </aside>
+
+      <main class="main panel">
+        <header class="hero">
+          <div>
+            <p class="eyebrow">设计升级版</p>
+            <h2>欢迎回来，今天继续批量出海报</h2>
+            <p class="hero-copy">保留原来的抠图与排版能力，外层切换成更现代的 Electron 仪表盘，让操作、状态反馈和文件流转都更顺手。</p>
+          </div>
+          <div class="hero-badge">
+            <span>v1.0 UI</span>
+            <strong>Desktop Dashboard</strong>
+          </div>
+        </header>
+
+        <section class="stats-grid">
+          <article class="stat-card warm">
+            <div>
+              <p>输入素材</p>
+              <h3 id="input-count">0</h3>
+            </div>
+            <span>张图片待处理</span>
+          </article>
+          <article class="stat-card light">
+            <div>
+              <p>已生成海报</p>
+              <h3 id="output-count">0</h3>
+            </div>
+            <span>输出目录实时统计</span>
+          </article>
+          <article class="stat-card accent">
+            <div>
+              <p>当前状态</p>
+              <h3 id="run-state">待机</h3>
+            </div>
+            <span id="run-state-detail">准备就绪，随时可以开始</span>
+          </article>
+        </section>
+
+        <section class="workspace-grid">
+          <article class="control-card card-surface">
+            <div class="card-head">
+              <div>
+                <p class="eyebrow">工作流配置</p>
+                <h3>一键生成区</h3>
+              </div>
+              <button id="start-btn" class="primary-btn">开始生成</button>
+            </div>
+
+            <div class="path-grid">
+              <div class="path-block">
+                <label>输入图片目录</label>
+                <div class="path-value" id="input-dir">-</div>
+                <div class="path-actions">
+                  <button data-action="pick-input" class="ghost-btn">更换目录</button>
+                  <button data-action="open-input" class="ghost-btn">打开目录</button>
+                </div>
+              </div>
+              <div class="path-block">
+                <label>输出海报目录</label>
+                <div class="path-value" id="output-dir">-</div>
+                <div class="path-actions">
+                  <button data-action="pick-output" class="ghost-btn">更换目录</button>
+                  <button data-action="open-output" class="ghost-btn">打开目录</button>
+                </div>
+              </div>
+              <div class="path-block compact">
+                <label>模板文件</label>
+                <div class="path-value" id="template-path">-</div>
+              </div>
+              <div class="path-block compact">
+                <label>字体文件</label>
+                <div class="path-value" id="font-path">自动检测</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="analytics-card card-surface">
+            <div class="card-head">
+              <div>
+                <p class="eyebrow">视觉概览</p>
+                <h3>生产节奏</h3>
+              </div>
+              <span class="chip">参考页风格重构</span>
+            </div>
+
+            <div class="chart-block">
+              <div class="chart-grid"></div>
+              <div class="chart-bars">
+                <div class="bar-row"><span>周一</span><div class="bar"><i style="width: 58%"></i></div></div>
+                <div class="bar-row"><span>周二</span><div class="bar"><i style="width: 82%"></i></div></div>
+                <div class="bar-row"><span>周三</span><div class="bar"><i style="width: 64%"></i></div></div>
+                <div class="bar-row"><span>周四</span><div class="bar"><i style="width: 88%"></i></div></div>
+                <div class="bar-row"><span>周五</span><div class="bar"><i style="width: 72%"></i></div></div>
+              </div>
+            </div>
+
+            <div class="insight-grid">
+              <div class="insight-item">
+                <strong>命名规范</strong>
+                <span>部门-姓名-YYYYMM</span>
+              </div>
+              <div class="insight-item">
+                <strong>默认目录</strong>
+                <span>文档目录自动创建</span>
+              </div>
+              <div class="insight-item">
+                <strong>发布形态</strong>
+                <span>Electron + 安装包</span>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="log-card card-surface">
+          <div class="card-head">
+            <div>
+              <p class="eyebrow">运行日志</p>
+              <h3>实时反馈</h3>
+            </div>
+            <button id="clear-log-btn" class="ghost-btn">清空日志</button>
+          </div>
+          <div id="log-stream" class="log-stream"></div>
+        </section>
+      </main>
+
+      <aside class="rightbar panel">
+        <div class="search-shell">
+          <input type="text" value="Search workflow" readonly />
+          <span>⌕</span>
+        </div>
+
+        <article class="promo-card">
+          <div>
+            <p>Monthly Star</p>
+            <h3>更像作品台，而不只是工具窗口</h3>
+            <span>更清晰的目录、更即时的日志、更舒服的节奏感</span>
+          </div>
+          <div class="promo-pill">Electron</div>
+        </article>
+
+        <article class="side-card">
+          <div class="card-head small-gap">
+            <div>
+              <p class="eyebrow">最近输出</p>
+              <h3>海报快览</h3>
+            </div>
+          </div>
+          <div id="recent-output-list" class="request-list"></div>
+        </article>
+
+        <article class="side-card">
+          <div class="card-head small-gap">
+            <div>
+              <p class="eyebrow">素材检查</p>
+              <h3>输入图片</h3>
+            </div>
+          </div>
+          <div id="input-file-list" class="request-list"></div>
+        </article>
+      </aside>
+    </div>
+
+    <script src="./renderer.js"></script>
+  </body>
+</html>
