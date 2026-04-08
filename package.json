@@ -8,8 +8,8 @@
   "scripts": {
     "dev": "electron .",
     "build:backend": "python scripts/build_backend.py",
-    "dist": "npm run build:backend && electron-builder --win nsis",
-    "pack": "npm run build:backend && electron-builder --dir"
+    "dist": "npm run build:backend && electron-builder --win nsis --publish never",
+    "pack": "npm run build:backend && electron-builder --dir --publish never"
   },
   "build": {
     "appId": "com.gcjun.monthlystarhelper",
